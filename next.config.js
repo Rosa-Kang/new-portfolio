@@ -1,9 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'localhost',
-      'placehold.co',
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'localhost',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'placehold.co',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        port: '',
+        pathname: '**',
+      },
       // Add your image domains here
     ],
     formats: ['image/webp', 'image/avif'],

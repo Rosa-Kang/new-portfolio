@@ -1,14 +1,90 @@
 export const projects = [
   {
+    slug: 'jiography',
+    title: 'Jiography',
+    liveLink:'https://brownandco.ca/',
+    description: 'Custom WordPress Theme Development',
+    year: 2025,
+    industry: 'Professional Services',
+    client: 'Jio Lee',
+    imageUrl: '/images/projects/jiography/jiography-main.jpg',
+    detail: {
+      experience: "Jio is a Professional Photographer..",
+      challenge: "The primary challenge in this project was to visualize complex energy data in an intuitive and beautiful way.",
+      results: "The finished website provided a powerful tool for stakeholders, highlighting the unique value proposition of atabc's technology.",
+      testimonial: {
+        text: "A stunning, textured centerpiece in our portfolio.",
+        author: 'Jio Lee',
+        role: 'CEO',
+      },
+      images: [
+        '/images/projects/jiography/jiography-detail-1.jpg',
+        '/images/projects/jiography/jiography-detail-2.jpg',
+        '/images/projects/jiography/jiography-detail-3.jpg',
+      ]
+    }
+  },
+  {
+    slug: 'purely-scrunchies',
+    title: 'Purely Scrunchies',
+    liveLink:'https://brownandco.ca/',
+    description: 'Shopify Website Custom Theme Development',
+    year: 2025,
+    industry: 'E-commerce',
+    client: 'PurelyScrunchies',
+    imageUrl: '/images/projects/purely-scrunchies/purely-scrunchies-main.jpg',
+    detail: {
+      experience: "The Creative Theme is perfect for service providers, creatives, and agencies. Featuring a modern design with a beautiful portfolio area makes this theme 10/10. Remember all colours, fonts, photos, graphic elements, and content will be infused with your branding, leveraging this high impact imagery-based layout.",
+      challenge: "The primary challenge in this project was to visualize complex energy data in an intuitive and beautiful way.",
+      results: "The finished website provided a powerful tool for stakeholders, highlighting the unique value proposition of atabc's technology.",
+      testimonial: {
+        text: "A stunning, textured centerpiece in our portfolio.",
+        author: 'Jane Doe',
+        role: 'CEO',
+      },
+      images: [
+        '/images/projects/purely-scrunchies/purely-scrunchies-detail-1.jpg',
+        '/images/projects/purely-scrunchies/purely-scrunchies-detail-2.jpg',
+        '/images/projects/purely-scrunchies/purely-scrunchies-detail-3.jpg',
+      ]
+    }
+  },
+  {
+    slug: 'ceda-rim',
+    title: 'Cedar Rim Nursery',
+    liveLink:'https://brownandco.ca/',
+    description: 'Woocommerce Company',
+    year: 2021,
+    industry: 'Cedar Rim online store',
+    client: 'Ceda Rim',
+    imageUrl: '/images/projects/ceda-rim/ceda-rim-main.jpg',
+    detail: {
+      experience: "Cedar Rim Nursery's custom WordPress website was built with WooCommerce e-commerce integration. Fully customized to bring Cedar Rim's online store to life! Complete with over 40 custom pages, we also worked with the client to refresh their site architecture, user experience, brand colour palette and identity illustration elements.",
+      challenge: "The primary challenge in this project was to visualize complex energy data in an intuitive and beautiful way.",
+      results: "The finished website provided a powerful tool for stakeholders, highlighting the unique value proposition of atabc's technology.",
+      testimonial: {
+        text: "A stunning, textured centerpiece in our portfolio.",
+        author: 'Jane Doe',
+        role: 'CEO',
+      },
+      images: [
+        '/images/projects/ceda-rim/ceda-rim-detail-1.jpg',
+        '/images/projects/ceda-rim/ceda-rim-detail-2.jpg',
+        '/images/projects/ceda-rim/ceda-rim-detail-3.jpg',
+      ]
+    }
+  },
+  {
     slug: 'brown-and-co',
     title: 'Brown&Co',
-    description: 'generating wealth in a digital economy',
+    liveLink:'https://brownandco.ca/',
+    description: 'Interior Design Company in BC',
     year: 2023,
     industry: 'Art & Design',
-    client: 'Granite Visions',
-    imageUrl: '/images/projects/brown&co/brown&co-main.jpg',
+    client: 'Sarah Brown',
+    imageUrl: '/images/projects/brown-and-co/brown-and-co-main.jpg',
     detail: {
-      experience: "brown&co had a tight deadline to get their new site live in just 7 short weeks, and we were excited to rise to the challenge! We loved applying brown&co's new galactic-inspired brand to custom elements throughout the site, including layered identity elements, on scroll animation and more.",
+      experience: "Brown&co had a tight deadline to get their new site live in just 7 short weeks, and we were excited to rise to the challenge! We loved applying brown&co's new galactic-inspired brand to custom elements throughout the site, including layered identity elements, on scroll animation and more.",
       challenge: "The primary challenge in this project was to achieve a realistic stone texture that would evoke a tangible, physical presence while maintaining accurate human proportions and detail.",
       results: "The finished model and photographs produced for STONE MIND exceeded expectations. The product photos delivered a powerful visual impact, highlighting the unique texture and structure of the stones under varied lighting.",
       testimonial: {
@@ -17,22 +93,23 @@ export const projects = [
         role: 'Founder & CEO',
       },
       images: [
-        '/images/projects/brown&co/brown&co-detail-1.jpg',
-        '/images/projects/brown&co/brown&co-detail-2.jpg',
-        '/images/projects/brown&co/brown&co-detail-3.jpg',
+        '/images/projects/brown-and-co/brown-and-co-detail-1.jpg',
+        '/images/projects/brown-and-co/brown-and-co-detail-2.jpg',
+        '/images/projects/brown-and-co/brown-and-co-detail-3.jpg',
       ]
     }
   },
   {
     slug: 'atabc',
     title: 'ATABC',
-    description: 'lighting up the future of energy',
+    liveLink:'https://brownandco.ca/',
+    description: 'Athletic Therapist Association in BC',
     year: 2024,
-    industry: 'Energy',
-    client: 'Future Systems',
+    industry: 'Health Care and Social Assistance',
+    client: 'ATABC',
     imageUrl: '/images/projects/atabc/atabc-main.jpg',
-    detail: { // Using brown&co detail as a template
-      experience: "atabc had a tight deadline to get their new site live in just 8 short weeks, and we were excited to rise to the challenge!",
+    detail: { 
+      experience: "Working with the Athletic Therapist Association of BC was a pleasure! ATABC wanted to have a more comprehensive brand without changing their logo. We built out their brand identity, designed their apparel, and a custom WordPress website. Their website is integral to their organization, with members requiring intensive functionality for managing memberships and profiling their services.",
       challenge: "The primary challenge in this project was to visualize complex energy data in an intuitive and beautiful way.",
       results: "The finished website provided a powerful tool for stakeholders, highlighting the unique value proposition of atabc's technology.",
       testimonial: {
@@ -46,7 +123,82 @@ export const projects = [
         '/images/projects/atabc/atabc-detail-3.jpg',
       ]
     }
-  }
+  },
+  {
+    slug: 'ad-lucem',
+    title: 'Ad Lucem',
+    liveLink:'https://brownandco.ca/',
+    description: 'My work in the legal services sector',
+    year: 2021,
+    industry: 'Legal Services',
+    client: 'Future Systems',
+    imageUrl: '/images/projects/ad-lucem/ad-lucem-main.jpg',
+    detail: {
+      experience: "Ad Lucem is where I focused on building trust and credibility through clean, professional design while ensuring accessibility compliance. This project required careful attention to content hierarchy deepened my understanding of CSS Flex Box for complex information architecture.",
+      challenge: "The primary challenge in this project was to visualize complex energy data in an intuitive and beautiful way.",
+      results: "The finished website provided a powerful tool for stakeholders, highlighting the unique value proposition of atabc's technology.",
+      testimonial: {
+        text: "A stunning, textured centerpiece in our portfolio.",
+        author: 'Jane Doe',
+        role: 'CEO',
+      },
+      images: [
+        '/images/projects/ad-lucem/ad-lucem-detail-1.jpg',
+        '/images/projects/ad-lucem/ad-lucem-detail-2.jpg',
+        '/images/projects/ad-lucem/ad-lucem-detail-3.jpg',
+      ]
+    }
+  },
+  {
+    slug: 'the-creative',
+    title: 'The Creative',
+    liveLink:'https://brownandco.ca/',
+    description: 'Custom WordPress Theme Development',
+    year: 2023,
+    industry: 'Professional Services',
+    client: 'Future Client',
+    imageUrl: '/images/projects/the-creative/the-creative-main.jpg',
+    detail: {
+      experience: "The Creative Theme is perfect for service providers, creatives, and agencies. Featuring a modern design with a beautiful portfolio area makes this theme 10/10. Remember all colours, fonts, photos, graphic elements, and content will be infused with your branding, leveraging this high impact imagery-based layout.",
+      challenge: "The primary challenge in this project was to visualize complex energy data in an intuitive and beautiful way.",
+      results: "The finished website provided a powerful tool for stakeholders, highlighting the unique value proposition of atabc's technology.",
+      testimonial: {
+        text: "A stunning, textured centerpiece in our portfolio.",
+        author: 'Jane Doe',
+        role: 'CEO',
+      },
+      images: [
+        '/images/projects/the-creative/the-creative-detail-1.jpg',
+        '/images/projects/the-creative/the-creative-detail-2.jpg',
+        '/images/projects/the-creative/the-creative-detail-3.jpg',
+      ]
+    }
+  },
+  {
+    slug: 'the-growth',
+    title: 'The Growth',
+    liveLink:'https://brownandco.ca/',
+    description: 'Custom WordPress Theme Development',
+    year: 2022,
+    industry: 'Professional Services',
+    client: 'Future Client',
+    imageUrl: '/images/projects/the-growth/the-growth-main.jpg',
+    detail: {
+      experience: "The Growth Canvas was designed with sophisticated service professionals in mind. A clean and refined base for businesses positioned in consulting, finance, legal, coaching, technology, and more. Remember all colours, fonts, photos, graphic elements, and content will be infused with your branding, leveraging this minimalistic and elegant layout.",
+      challenge: "The primary challenge in this project was to visualize complex energy data in an intuitive and beautiful way.",
+      results: "The finished website provided a powerful tool for stakeholders, highlighting the unique value proposition of atabc's technology.",
+      testimonial: {
+        text: "A stunning, textured centerpiece in our portfolio.",
+        author: 'Jane Doe',
+        role: 'CEO',
+      },
+      images: [
+        '/images/projects/the-growth/the-growth-detail-1.jpg',
+        '/images/projects/the-growth/the-growth-detail-2.jpg',
+        '/images/projects/the-growth/the-growth-detail-3.jpg',
+      ]
+    }
+  },
 ];
 
 export const faqs = [

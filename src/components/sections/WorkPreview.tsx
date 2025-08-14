@@ -37,7 +37,7 @@ export function WorkPreview() {
   transition={{ duration: 0.8, delay: 0.2 }}
   className="grid grid-cols-2 lg:grid-cols-4 gap-6"
 >
-  {projects.map((project, index) => (
+  {projects.slice(0, 4).map((project, index) => (
     <motion.div
       key={project.slug}
       initial={{ opacity: 0, y: 30 }}
@@ -69,10 +69,8 @@ export function WorkPreview() {
           )}
           
           <div className="absolute top-4 left-4 right-4 z-10">
-            <div className="flex items-center justify-between text-xs">
-              <span className={project.detail.images && project.detail.images[0] ? 'text-white' : 'text-black'}>
-                9:41
-              </span> 
+            <div className="flex items-center justify-end text-xs">
+              
               <div className="flex space-x-1">
                 <div className={`w-4 h-2 rounded-sm ${project.detail.images && project.detail.images[0] ? 'bg-white' : 'bg-black'}`}></div>
                 <div className={`w-1 h-2 rounded-sm ${project.detail.images && project.detail.images[0] ? 'bg-white' : 'bg-black'}`}></div>
@@ -97,7 +95,7 @@ export function WorkPreview() {
                     : project.detail.experience
                   }
                 </p>
-                <Link href={`/work/brown-and-co`}>
+                <Link href={`/work/${project.slug}`}>
                   <button className="bg-black text-white px-4 py-2 rounded text-xs hover:bg-gray-800 transition-colors duration-200">
                     LEARN MORE
                   </button>
