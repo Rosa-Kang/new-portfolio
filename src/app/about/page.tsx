@@ -25,7 +25,7 @@ const lineVariants = {
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-24 px-6">
+    <div className="pt-32 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
         <div className="mb-16 h-[320px] md:h-[480px] flex flex-col justify-center items-center">
@@ -158,12 +158,12 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-center"
+          className="text-center py-16"
         >
           <h3 className="text-sm font-medium text-gray-500 mb-8">Trusted by companies worldwide</h3>
           
           <div className="flex justify-center items-center space-x-8 text-gray-400">
-            {['Kansas', 'Aurora', 'Seoul', 'venice.', 'Sitemark', 'Rise'].map((client, index) => (
+            {['Seoul', 'Vancouver', 'Toronto'].map((client, index) => (
               <motion.span
                 key={client}
                 initial={{ opacity: 0 }}

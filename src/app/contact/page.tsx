@@ -30,6 +30,12 @@ export default function ContactPage() {
     message: ''
   })
 
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const handleFaqToggle = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -44,7 +50,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="pt-32 pb-24 px-6">
+    <div className="pt-32 px-6">
       <div className="max-w-6xl lg:px-16">
         {/* Page Header */}
         <div className="mb-16 h-[320px] md:h-[480px]">
@@ -71,7 +77,8 @@ export default function ContactPage() {
             </motion.h1>
           </AnimatePresence>
         </div>
-
+      </div>
+      <div className="max-w-6xl lg:px-16 mx-auto">
         {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -136,7 +143,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-24"
+          className="py-24"
         >
           <h2 className="text-2xl font-bold mb-8">FAQs.</h2>
           
@@ -166,10 +173,32 @@ export default function ContactPage() {
                 transition={{ duration: 0.6, delay: 0.6 + 0.1 * index }}
                 className="border-b border-gray-200 pb-4"
               >
-                <button className="w-full text-left flex items-center justify-between py-4 hover:text-gray-600 transition-colors">
+                <button 
+                  className="w-full text-left flex items-center justify-between py-4 hover:text-gray-600 transition-colors"
+                  onClick={() => handleFaqToggle(index)}
+                >
                   <span className="font-medium">{faq.question}</span>
-                  <span className="text-2xl">+</span>
+                  <motion.span
+                    animate={{ rotate: openFaqIndex === index ? 45 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-2xl"
+                  >
+                    +
+                  </motion.span>
                 </button>
+                <AnimatePresence>
+                  {openFaqIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeOut' }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-gray-600 pb-4">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             ))}
           </div>

@@ -2,9 +2,7 @@
 
 // src/app/work/page.tsx
 import { AnimatePresence, motion } from 'framer-motion'
-import { projects } from '@/data/projects'
-import Link from 'next/link'
-import Image from 'next/image'
+
 
 const containerVariants = {
   hidden: {}, 
@@ -28,7 +26,7 @@ const lineVariants = {
 
 export default function WorkPage() {
   return (
-    <div className="pt-32 pb-24 px-6">
+    <div className="pt-32 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
         <div className="mb-16 h-[320px] md:h-[480px] flex flex-col justify-center items-center">
@@ -48,14 +46,6 @@ export default function WorkPage() {
                 </motion.div>
               </div>
             </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-gray-600 max-w-2xl"
-            >
-              work 2021 - 2025
-            </motion.p>
           </AnimatePresence>
         </div>
 
@@ -113,49 +103,6 @@ export default function WorkPage() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Project Cards */}
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 * index }}
-            >
-              <Link href={`/work/${project.slug}`} className="group block">
-                <div className="grid lg:grid-cols-2 gap-12 items-center bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors">
-                  <div className="space-y-6">
-                    <div>
-                      <h2 className="text-4xl font-bold mb-2 group-hover:text-gray-600 transition-colors">
-                        {project.title}
-                      </h2>
-                      <p className="text-sm text-gray-500 mb-4">
-                        {project.industry} • {project.year}
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        {project.description.substring(0, 200)}...
-                      </p>
-                    </div>
-                    
-                    <div className="inline-flex items-center text-sm font-medium group-hover:underline">
-                      View Project →
-                    </div>
-                  </div>
-                  
-                  <div className="relative aspect-square rounded-xl overflow-hidden">
-                    <Image
-                      src={project.coverImage}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </div>
   )

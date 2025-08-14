@@ -79,13 +79,13 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-            <div className="max-w-8xl mx-auto grid lg:grid-cols-2 gap-12 items-start justify-between pt-8">
-                  <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="space-y-4"
-          >
+            <div className="max-w-8xl mx-auto grid lg:grid-cols-2 gap-12 items-start justify-between pt-8 pb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="space-y-4"
+            >
             <p className="text-lg text-gray-600">
               <a href="mailto:therosessom@gmail.com">therosessom@gmail.com</a>
             </p>

@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import AvailableForWorkIndicator from '@/components/ui/AvailableForWorkIndicator'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,14 +25,13 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <SmoothScroll>
           <CustomCursor />
-          <div className="min-h-screen bg-white text-black">
+          <div className="min-h-screen bg-white text-black flex flex-col">
             <Header />
-            <main>
+            <main className="flex-grow">
               {children}
             </main>
             <Footer />
           </div>
-          <AvailableForWorkIndicator />
         </SmoothScroll>
       </body>
     </html>

@@ -54,14 +54,14 @@ export const CustomCursor = () => {
       width: 20,
       height: 20,
       backgroundColor: "#fff",
-      mixBlendMode: 'difference',
+      mixBlendMode: 'difference' as const,
       transition: { duration: 0.2, ease: "easeOut" }
     },
     pointer: {
       width: 60,
       height: 60,
       backgroundColor: "#fff",
-      mixBlendMode: 'difference',
+      mixBlendMode: 'difference' as const,
       transition: { duration: 0.2, ease: "easeOut" }
     }
   };

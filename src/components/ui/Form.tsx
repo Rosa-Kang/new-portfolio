@@ -2,7 +2,7 @@
 
 // src/components/ui/Form.tsx
 import { forwardRef, InputHTMLAttributes, TextareaHTMLAttributes } from 'react'
-import { motion } from 'framer-motion'
+import { motion, MotionProps } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 // Input component
@@ -125,6 +125,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg'
   loading?: boolean
   children: React.ReactNode
+  whileHover?: MotionProps['whileHover']
+  whileTap?: MotionProps['whileTap']
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -135,6 +137,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     loading = false,
     disabled,
     children,
+    whileHover,
+    whileTap,
     ...props 
   }, ref) => {
     const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
@@ -153,10 +157,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     return (
-      <motion.button
+            <motion.button
         ref={ref}
-        whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
-        whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
+        whileHover={whileHover || { scale: disabled || loading ? 1 : 1.02 }}
+        whileTap={whileTap || { scale: disabled || loading ? 1 : 0.98 }}
         className={cn(
           baseStyles,
           variants[variant],
@@ -164,7 +168,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         disabled={disabled || loading}
-        {...props}
+        {...(props as MotionProps)}
       >
         {loading && (
           <motion.div
@@ -224,11 +228,11 @@ type ValidationRule<T> = {
   message: string
 }
 
-type ValidationRules<T extends Record<string, any>> = {
+type ValidationRules<T extends Record<string, unknown>> = {
   [K in keyof T]?: ValidationRule<T[K]>[]
 }
 
-export function useFormValidation<T extends Record<string, any>>(
+export function useFormValidation<T extends Record<string, unknown>>(
   initialValues: T,
   validationRules: ValidationRules<T>
 ) {

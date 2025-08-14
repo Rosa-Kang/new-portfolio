@@ -36,7 +36,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 <p>INDUSTRY: {project.industry}</p>
                 <p>CLIENT: {project.client}</p>
                 <p>YEAR: {project.year}</p>
-                <p>{project.experience}</p>
+                <p>{project.detail.experience}</p>
               </div>
               
               <h1 className="text-6xl md:text-8xl font-black">{project.title}</h1>
@@ -88,7 +88,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </motion.section>
 
       {/* Challenge Section */}
-      {project.challenge && (
+      {project.detail.challenge && (
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -97,7 +97,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         >
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold mb-8">challenge.</h2>
-            <p className="text-lg leading-relaxed mb-12">{project.challenge}</p>
+            <p className="text-lg leading-relaxed mb-12">{project.detail.challenge}</p>
             
             {/* Stone Images Grid */}
             <div className="grid md:grid-cols-2 gap-8">
@@ -123,7 +123,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       )}
 
       {/* Results Section */}
-      {project.results && (
+      {project.detail.results && (
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         >
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold mb-8">results.</h2>
-            <p className="text-lg leading-relaxed mb-12">{project.results}</p>
+            <p className="text-lg leading-relaxed mb-12">{project.detail.results}</p>
             
             {/* Additional result images */}
             <div className="grid md:grid-cols-2 gap-8">
@@ -158,7 +158,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       )}
 
       {/* Testimonial Section */}
-      {project.testimonial && (
+      {project.detail.testimonial && (
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -171,24 +171,14 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <div className="bg-gray-50 rounded-2xl p-8 text-center">
               <div className="text-6xl text-gray-300 mb-4">&ldquo;</div>
               <blockquote className="text-xl font-medium mb-8 leading-relaxed">
-                {project.testimonial.quote}
+                {project.detail.testimonial.text}
               </blockquote>
               
               <div className="flex items-center justify-center space-x-4">
-                {project.testimonial.avatar && (
-                  <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <Image
-                      src={project.testimonial.avatar}
-                      alt={project.testimonial.author}
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
+                
                 <div className="text-left">
-                  <div className="font-medium">{project.testimonial.author}</div>
-                  <div className="text-sm text-gray-600">{project.testimonial.position}</div>
+                  <div className="font-medium">{project.detail.testimonial.author}</div>
+                  <div className="text-sm text-gray-600">{project.detail.testimonial.role}</div>
                 </div>
               </div>
             </div>

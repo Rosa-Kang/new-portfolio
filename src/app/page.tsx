@@ -1,7 +1,7 @@
 'use client'
 
 // src/app/page.tsx
-import { motion } from 'framer-motion'
+
 import { HeroSection } from '@/components/sections/HeroSection'
 import { WorkPreview } from '@/components/sections/WorkPreview'
 import { AboutPreview } from '@/components/sections/AboutPreview'

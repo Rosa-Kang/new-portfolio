@@ -110,15 +110,17 @@ export function OptimizedImage({
 }
 
 // Gallery image component with zoom functionality
-interface GalleryImageProps extends Omit<OptimizedImageProps, 'onClick'> {
+interface GalleryImageProps extends Omit<OptimizedImageProps, 'onClick' | 'alt'> {
   onClick?: () => void
   zoomable?: boolean
+  alt: string
 }
 
 export function GalleryImage({ 
   onClick, 
   zoomable = true, 
   containerClassName,
+  alt,
   ...props 
 }: GalleryImageProps) {
   return (
@@ -133,6 +135,7 @@ export function GalleryImage({
     >
       <OptimizedImage
         {...props}
+        alt={alt}
         containerClassName="relative"
       />
       

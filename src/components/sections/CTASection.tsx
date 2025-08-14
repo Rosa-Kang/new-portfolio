@@ -48,24 +48,6 @@ export function CTASection() {
               <span className="text-sm font-medium">Available For Work</span>
             </div>
           </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="pt-12 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400 border-t border-gray-800"
-          >
-            <div className="space-y-1">
-              <p>+1(604)-910-3337</p>
-              <p><a href="mailto:therosessom@gmail.com">therosessom@gmail.com</a></p>
-            </div>
-            
-            <div className="text-right mt-4 sm:mt-0">
-              <p>All rights reserved,</p>
-              <p>Therosessom ©2025</p>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

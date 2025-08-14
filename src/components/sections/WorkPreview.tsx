@@ -4,20 +4,13 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+
 
 export function WorkPreview() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const mockProjects = [
-    {
-      id: 1,
-      title: 'VMC Mobile App',
-      image: '/images/vmc-mobile-preview.jpg',
-      year: '2021 - 2025'
-    }
-  ]
+  
 
   return (
     <section ref={ref} className="py-24 px-6 bg-gray-50">
@@ -31,7 +24,6 @@ export function WorkPreview() {
         >
           <h2 className="text-4xl md:text-6xl font-bold">work.</h2>
           <div className="text-right">
-            <p className="text-sm text-gray-600">work 2021 - 2025</p>
             <Link 
               href="/work" 
               className="text-sm underline hover:no-underline transition-all"
@@ -46,7 +38,7 @@ export function WorkPreview() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {[1, 2, 3, 4].map((item, index) => (
             <motion.div
