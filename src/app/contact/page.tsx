@@ -1,8 +1,27 @@
 'use client'
 
-// src/app/contact/page.tsx
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
+
+const containerVariants = {
+  hidden: {}, 
+  visible: {
+    transition: {
+      staggerChildren: 0.15, 
+    },
+  },
+};
+
+const lineVariants = {
+  hidden: { y: "100%" },
+  visible: { 
+    y: "0%",
+    transition: {
+      duration: 1.2,   
+      ease: [0.22, 1, 0.36, 1] 
+    } 
+  },
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -26,25 +45,39 @@ export default function ContactPage() {
 
   return (
     <div className="pt-32 pb-24 px-6">
-      <div className="max-w-6xl px-16">
+      <div className="max-w-6xl lg:px-16">
         {/* Page Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <h1 className="text-6xl md:text-[11rem] font-semibold mb-8 py-16">
-            SHOOT A<br />REQUEST
-          </h1>
-        </motion.div>
+        <div className="mb-16 h-[320px] md:h-[480px]">
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key="request-header-masked"
+              className="text-6xl md:text-[11rem] font-semibold"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0, transition: { duration: 0.3 } }}
+              aria-label="Shoot a Request"
+            >
+              <div className="overflow-hidden py-2">
+                <motion.div className="block" variants={lineVariants}>
+                  SHOOT A
+                </motion.div>
+              </div>
+              <div className="overflow-hidden py-2">
+                <motion.span className="block" variants={lineVariants}>
+                  REQUEST
+                </motion.span>
+              </div>
+            </motion.h1>
+          </AnimatePresence>
+        </div>
 
         {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+          className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 max-w-5xl mx-auto"
         >
           <div className="mb-8">
             <p className="text-sm text-gray-600 mb-2"><a href="mailto:therosessom@gmail.com">therosessom@gmail.com</a></p>

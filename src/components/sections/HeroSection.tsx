@@ -1,7 +1,25 @@
 'use client'
+const containerVariants = {
+  hidden: {}, 
+  visible: {
+    transition: {
+      staggerChildren: 0.15, 
+    },
+  },
+};
 
-// src/components/sections/HeroSection.tsx
-import { motion } from 'framer-motion'
+const lineVariants = {
+  hidden: { y: "100%" },
+  visible: { 
+    y: "0%",
+    transition: {
+      duration: 1.2,   
+      ease: [0.22, 1, 0.36, 1] 
+    } 
+  },
+};
+
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 
 export function HeroSection() {
@@ -16,16 +34,28 @@ export function HeroSection() {
           className="space-y-8"
         >
           <div>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-6xl md:text-[11rem] font-semibold leading-none"
-            >
-              ROSA
-              <br />
-              KANG
-            </motion.h1>
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key="homepage-header-masked"
+                className="text-left py-16 text-6xl md:text-[12rem] font-semibold"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                aria-label="ROSA KANG"
+              >
+                <div className="overflow-hidden py-2">
+                  <motion.div className="block" variants={lineVariants}>
+                    ROSA
+                  </motion.div>
+                </div>
+                <div className="overflow-hidden py-2">
+                  <motion.div className="block" variants={lineVariants}>
+                    KANG
+                  </motion.div>
+                </div>
+              </motion.h1>
+          </AnimatePresence>
           </div>
         </motion.div>
 

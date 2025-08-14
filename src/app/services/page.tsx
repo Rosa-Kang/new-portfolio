@@ -1,8 +1,28 @@
 'use client'
 
 // src/app/services/page.tsx
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+
+const containerVariants = {
+  hidden: {}, 
+  visible: {
+    transition: {
+      staggerChildren: 0.15, 
+    },
+  },
+};
+
+const lineVariants = {
+  hidden: { y: "100%" },
+  visible: { 
+    y: "0%",
+    transition: {
+      duration: 1.2,   
+      ease: [0.22, 1, 0.36, 1] 
+    } 
+  },
+};
 
 export default function ServicesPage() {
   const services = [
@@ -37,17 +57,33 @@ export default function ServicesPage() {
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
-        >
-          <h1 className="text-6xl md:text-8xl font-black mb-8">SERVICES</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I offer a comprehensive range of creative services to help bring your vision to life.
-          </p>
-        </motion.div>
+        <div className="mb-16 h-[320px] md:h-[480px] flex flex-col justify-center items-center">
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key="services-header-masked"
+              className="text-center pb-16 text-6xl md:text-8xl font-black mb-8"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0, transition: { duration: 0.3 } }}
+              aria-label="SERVICES"
+            >
+              <div className="overflow-hidden py-2">
+                <motion.div className="block" variants={lineVariants}>
+                  SERVICES
+                </motion.div>
+              </div>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+            >
+              I offer a comprehensive range of creative services to help bring your vision to life.
+            </motion.p>
+          </AnimatePresence>
+        </div>
 
         {/* Services Grid */}
         <div className="grid lg:grid-cols-2 gap-12 mb-24">

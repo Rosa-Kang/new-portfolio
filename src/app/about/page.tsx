@@ -1,27 +1,63 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+
+const containerVariants = {
+  hidden: {}, 
+  visible: {
+    transition: {
+      staggerChildren: 0.15, 
+    },
+  },
+};
+
+const lineVariants = {
+  hidden: { y: "100%" },
+  visible: { 
+    y: "0%",
+    transition: {
+      duration: 1.2,   
+      ease: [0.22, 1, 0.36, 1] 
+    } 
+  },
+};
 
 export default function AboutPage() {
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <h1 className="text-center pb-16 text-6xl md:text-[12rem] font-semibold mb-4">
-            ROSA<br />KANG
-          </h1>
-          <div className="flex items-center justify-between">
-            <p className="text-lg text-gray-600">about.</p>
-            <p className="text-sm text-gray-500">Read.cv</p>
-          </div>
-        </motion.div>
+        <div className="mb-16 h-[320px] md:h-[480px] flex flex-col justify-center items-center">
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key="about-header-masked"
+              className="text-center py-16 text-6xl md:text-[12rem] font-semibold"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0, transition: { duration: 0.3 } }}
+              aria-label="ROSA KANG about."
+            >
+              <div className="overflow-hidden py-2">
+                <motion.div className="block" variants={lineVariants}>
+                  ROSA
+                </motion.div>
+              </div>
+              <div className="overflow-hidden py-2">
+                <motion.div className="block" variants={lineVariants}>
+                  KANG
+                </motion.div>
+              </div>
+            </motion.h1>
+          </AnimatePresence>
+        </div>
+
+        <div className="overflow-hidden py-8 text-4xl">
+          <motion.span className="block" variants={lineVariants}>
+            about.
+          </motion.span>
+        </div>
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">

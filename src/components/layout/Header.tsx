@@ -22,7 +22,6 @@ export function Header() {
   }, [])
 
   const menuItems = [
-    { href: '/', label: 'Home' },
     { href: '/work', label: 'Work' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' }
@@ -39,7 +38,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold">
+          <Link href="/" className="text-3xl font-bold">
             Therosessom.
           </Link>
 
@@ -60,38 +59,57 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen(true)} // Always open, X button will be inside menu
             className="md:hidden p-2"
-            aria-label="Toggle menu"
+            aria-label="Open menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <Menu size={24} />
           </button>
         </div>
 
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isMenuOpen && (
-            <motion.nav
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 border-t border-gray-200"
-            >
-              <div className="pt-4 space-y-4">
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsMenuOpen(false)}
+                className="fixed inset-0 bg-black/50 z-30 md:hidden"
+              />
+              <motion.nav
+                initial={{ x: '100%' }}
+                animate={{ x: '0%' }}
+                exit={{ x: '100%' }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="fixed top-0 right-0 h-screen w-[80vw] bg-white z-40 p-6 md:hidden shadow-lg"
+              >
+                <div className="flex justify-end mb-4">
+                  <button
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block text-lg font-medium transition-colors hover:text-gray-600 ${
-                      pathname === item.href ? 'text-black' : 'text-gray-500'
-                    }`}
+                    className="p-2"
+                    aria-label="Close menu"
                   >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </motion.nav>
+                    <X size={24} />
+                  </button>
+                </div>
+                <div className="pt-4 space-y-4">
+                  {menuItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`block text-lg font-medium transition-colors hover:text-gray-600 ${
+                        pathname === item.href ? 'text-black' : 'text-gray-500'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </motion.nav>
+            </>
           )}
         </AnimatePresence>
       </div>

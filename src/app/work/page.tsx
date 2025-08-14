@@ -1,27 +1,63 @@
 'use client'
 
 // src/app/work/page.tsx
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { projects } from '@/data/projects'
 import Link from 'next/link'
 import Image from 'next/image'
+
+const containerVariants = {
+  hidden: {}, 
+  visible: {
+    transition: {
+      staggerChildren: 0.15, 
+    },
+  },
+};
+
+const lineVariants = {
+  hidden: { y: "100%" },
+  visible: { 
+    y: "0%",
+    transition: {
+      duration: 1.2,   
+      ease: [0.22, 1, 0.36, 1] 
+    } 
+  },
+};
 
 export default function WorkPage() {
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <h1 className="text-6xl md:text-[11rem] font-semibold mb-4">WORK</h1>
-          <p className="text-lg text-gray-600 max-w-2xl">
-            work 2021 - 2025
-          </p>
-        </motion.div>
+        <div className="mb-16 h-[320px] md:h-[480px] flex flex-col justify-center items-center">
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key="work-header-masked"
+              className="text-6xl md:text-[11rem] font-semibold mb-4"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0, transition: { duration: 0.3 } }}
+              aria-label="WORK"
+            >
+              <div className="overflow-hidden py-2">
+                <motion.div className="block" variants={lineVariants}>
+                  WORK
+                </motion.div>
+              </div>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-lg text-gray-600 max-w-2xl"
+            >
+              work 2021 - 2025
+            </motion.p>
+          </AnimatePresence>
+        </div>
 
         {/* Mobile Mockups Grid */}
         <motion.div
@@ -36,7 +72,7 @@ export default function WorkPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="bg-gray-200 rounded-3xl aspect-[9/16] relative overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            className="bg-gray-200 rounded-3xl aspect-[9/16] relative overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer"
             >
               <div className="absolute inset-4 bg-white rounded-[28px] overflow-hidden">
                 {/* VMC Phone mockup content */}
