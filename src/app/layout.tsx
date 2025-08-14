@@ -8,7 +8,7 @@ import { Footer } from '@/components/layout/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Rosa Kang - Web Developer & Designer',
+  title: 'Therosessom- Website Solution Provider',
   description: 'Hello, I\'m a freelancer specializing in minimal design with years of expertise — based in Toronto, working remote. Let\'s create!',
 }
 

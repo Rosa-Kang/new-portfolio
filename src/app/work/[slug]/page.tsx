@@ -1,6 +1,5 @@
 'use client'
 
-// src/app/work/[slug]/page.tsx
 import { motion } from 'framer-motion'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
