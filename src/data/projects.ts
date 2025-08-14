@@ -40,7 +40,11 @@ export const projects = [
         author: 'Jane Doe',
         role: 'CEO',
       },
-      images: [ 'https://placehold.co/1200x800/e0e0e0/333?text=Energy+Data+1' ]
+      images: [
+        'https://placehold.co/1200x800/e0e0e0/333?text=Energy+Data+1',
+        'https://placehold.co/600x800/d0d0d0/333?text=Energy+Data+2',
+        'https://placehold.co/600x800/c0c0c0/333?text=Energy+Data+3',
+      ]
     }
   }
 ];
@@ -65,3 +69,7 @@ export const faqs = [
 ];
 
 export const services = ["UI&UX DESIGN", "BRAND ART", "ILLUSTRATION", "PHOTO", "VIDEO EDIT"];
+
+export const getProjectBySlug = (slug: string) => {
+  return projects.find((project) => project.slug === slug);
+};

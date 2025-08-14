@@ -44,7 +44,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
             <div className="relative aspect-[9/16] max-w-md mx-auto">
               <Image
-                src={project.images[0]}
+                src={project.detail.images[0]}
                 alt={project.title}
                 fill
                 className="object-cover rounded-3xl"
@@ -77,7 +77,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <div className="bg-gray-100 rounded-2xl p-8 text-center">
             <div className="relative aspect-[9/16] max-w-sm mx-auto">
               <Image
-                src={project.images[1]}
+                src={project.detail.images[1]}
                 alt={`${project.title} mobile view`}
                 fill
                 className="object-cover rounded-3xl"
@@ -101,7 +101,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             
             {/* Stone Images Grid */}
             <div className="grid md:grid-cols-2 gap-8">
-              {project.images.slice(2, 6).map((image, index) => (
+              {project.detail.images.slice(2, 6).map((image, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
