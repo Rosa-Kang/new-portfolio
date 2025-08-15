@@ -83,25 +83,25 @@ export function Header() {
                 animate={{ x: '0%' }}
                 exit={{ x: '100%' }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="fixed top-0 right-0 h-screen w-[80vw] bg-white z-40 p-6 md:hidden shadow-lg"
+                className="fixed top-0 right-0 h-screen w-[80vw] bg-black z-40 p-6 md:hidden shadow-lg"
               >
                 <div className="flex justify-end mb-4">
                   <button
                     onClick={() => setIsMenuOpen(false)}
-                    className="p-2"
+                    className="p-2 text-white"
                     aria-label="Close menu"
                   >
                     <X size={24} />
                   </button>
                 </div>
-                <div className="pt-4 space-y-4">
+                <div className="pt-4 space-y-4 flex flex-col justify-center items-center min-h-[560px]">
                   {menuItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block text-lg font-medium transition-colors hover:text-gray-600 ${
-                        pathname === item.href ? 'text-black' : 'text-gray-500'
+                      className={`block text-4xl py-4 font-medium transition-colors hover:text-gray-300 ${
+                        pathname === item.href ? 'text-white' : 'text-gray-400'
                       }`}
                     >
                       {item.label}
