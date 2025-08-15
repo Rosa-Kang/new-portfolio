@@ -123,7 +123,7 @@ export default function AboutPage() {
                 description: 'Custom wordpress website development'
               },
               {
-                title: 'Shopify Website',
+                title: 'Shopify Website Development',
                 description: 'Shopify Website Custom Development'
               },
               {

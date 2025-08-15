@@ -100,7 +100,7 @@ export function HeroSection() {
             <div className="max-w-xl">
               <p className="text-3xl leading-relaxed">
                 Hello, I&apos;m Rosa Kang, a Web Developer with 4+ years of experience at innovative startups, and award-winning agencies.
-                I feel great joy in bringing my ideas to life through code. Let&apos;s create!
+                I feel great joy in bringing ideas to life through collaboration. Let&apos;s create!
               </p>
             </div>
           </motion.div>
