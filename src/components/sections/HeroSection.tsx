@@ -79,7 +79,7 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-            <div className="max-w-8xl mx-auto grid lg:grid-cols-2 gap-12 items-start justify-between pt-8 pb-24">
+            <div className="max-w-8xl mx-auto grid lg:grid-cols-[1fr_3fr] gap-32 items-start justify-between pt-8 pb-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,10 +97,10 @@ export function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="space-y-4"
           >
-            <div className="max-w-md">
+            <div className="max-w-xl">
               <p className="text-3xl leading-relaxed">
-                Hello, I&apos;m a freelancer specializing in minimal design with years of 
-                expertise — based in Toronto, working remote. Let&apos;s create!
+                Hello, I&apos;m Rosa Kang, a Web Developer with 4+ years of experience at innovative startups, and award-winning agencies.
+                I feel great joy in bringing my ideas to life through code. Let&apos;s create!
               </p>
             </div>
           </motion.div>
@@ -110,7 +110,7 @@ export function HeroSection() {
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >

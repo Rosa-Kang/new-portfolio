@@ -39,10 +39,9 @@ export function AboutPreview() {
           >
             <div className="space-y-6">
               <p className="text-lg leading-relaxed">
-                Hello! I am Rosa Kang, a Web Developer with years of valuable 
-                experience at innovative startups and award-winning agencies. I 
+                Hello! I am Rosa Kang, a Web Developer with years of experience at innovative startups and award-winning agencies. I 
                 collaborate with businesses of all sizes worldwide, using the latest 
-                technologies. My designs have also earned multiple awards.
+                technologies.
               </p>
               
               <p className="text-base text-gray-600 leading-relaxed">

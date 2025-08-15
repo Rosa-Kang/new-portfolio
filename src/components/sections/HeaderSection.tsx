@@ -40,8 +40,9 @@ export function HeroSection() {
             
             <div className="max-w-md">
               <p className="text-lg leading-relaxed">
-                Hello, I&apos;m a freelancer specializing in minimal design with years of 
-                expertise — based in Toronto, working remote. Let&apos;s create!
+                Hello, I&apos;m Rosa Kang, a Web Developer with years of experience at innovative startups and award-winning agencies. I 
+                collaborate with businesses of all sizes worldwide, using the latest 
+                technologies.
               </p>
             </div>
           </motion.div>
