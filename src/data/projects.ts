@@ -27,7 +27,7 @@ export const projects = [
   {
     slug: 'purely-scrunchies',
     title: 'Purely Scrunchies',
-    liveLink:'https://brownandco.ca/',
+    liveLink:'',
     description: 'Shopify Website Custom Theme Development',
     year: 2025,
     industry: 'E-commerce',
