@@ -45,55 +45,57 @@ export function WorkPreview() {
       transition={{ duration: 0.6, delay: 0.1 * index }}
       className="bg-gray-200 rounded-3xl aspect-[9/16] relative overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer"
     >
-      <div className="absolute inset-4 bg-white rounded-[28px] overflow-hidden">
-        {/* Phone mockup content */}
-        <div 
-          className={`h-full relative ${
-            project.detail.images && project.detail.images[0] 
-              ? '' 
-              : 'bg-gradient-to-b from-orange-200 via-pink-200 to-purple-200'
-          }`}
-          style={
-            project.detail.images && project.detail.images[0] 
-              ? {
-                  backgroundImage: `url(${project.detail.images[0]})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }
-              : {}
-          }
-        >
-          {/* Overlay for better text readability when background image is used */}
-          {project.detail.images && project.detail.images[0] && (
-            <div className="absolute inset-0 bg-black/45"></div>
-          )}
-
-          <div className="absolute top-[10rem] left-4 right-4 z-10">
-            <div className={`text-sm font-bold mb-2 ${project.detail.images && project.detail.images[0] ? 'text-white' : 'text-black'}`}>
-              {project.title.toLowerCase()}
-            </div>
-            <div className="space-y-4">
-              <h3 className={`text-lg font-bold leading-tight ${project.detail.images && project.detail.images[0] ? 'text-white' : 'text-black'}`}>
-                {project.description}
-              </h3>
-              
-              <div className="bg-white/80 rounded-lg p-3 text-xs">
-                <p className="mb-3 text-black">
-                  {project.detail.experience.length > 120 
-                    ? `${project.detail.experience.substring(0, 120)}...` 
-                    : project.detail.experience
+      <Link href={`/work/${project.slug}`}>
+        <div className="absolute inset-4 bg-white rounded-[28px] overflow-hidden">
+          {/* Phone mockup content */}
+          <div 
+            className={`h-full relative ${
+              project.detail.images && project.detail.images[0] 
+                ? '' 
+                : 'bg-gradient-to-b from-orange-200 via-pink-200 to-purple-200'
+            }`}
+            style={
+              project.detail.images && project.detail.images[0] 
+                ? {
+                    backgroundImage: `url(${project.detail.images[0]})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
                   }
-                </p>
-                <Link href={`/work/${project.slug}`}>
-                  <button className="bg-black text-white px-4 py-2 rounded text-xs hover:bg-gray-800 transition-colors duration-200">
-                    LEARN MORE
-                  </button>
-                </Link>
+                : {}
+            }
+          >
+            {/* Overlay for better text readability when background image is used */}
+            {project.detail.images && project.detail.images[0] && (
+              <div className="absolute inset-0 bg-black/45"></div>
+            )}
+
+            <div className="absolute top-[10rem] left-4 right-4 z-10">
+              <div className={`text-sm font-bold mb-2 ${project.detail.images && project.detail.images[0] ? 'text-white' : 'text-black'}`}>
+                {project.title.toLowerCase()}
+              </div>
+              <div className="space-y-4">
+                <h3 className={`text-lg font-bold leading-tight ${project.detail.images && project.detail.images[0] ? 'text-white' : 'text-black'}`}>
+                  {project.description}
+                </h3>
+                
+                <div className="bg-white/80 rounded-lg p-3 text-xs">
+                  <p className="mb-3 text-black">
+                    {project.detail.experience.length > 120 
+                      ? `${project.detail.experience.substring(0, 120)}...` 
+                      : project.detail.experience
+                    }
+                  </p>
+                  
+                    <button className="bg-black text-white px-4 py-2 rounded text-xs hover:bg-gray-800 transition-colors duration-200">
+                      LEARN MORE
+                    </button>
+                
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> 
+      </Link>
     </motion.div>
   ))}
 </motion.div>
