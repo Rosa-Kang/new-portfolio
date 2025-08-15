@@ -65,21 +65,10 @@ export function WorkPreview() {
         >
           {/* Overlay for better text readability when background image is used */}
           {project.detail.images && project.detail.images[0] && (
-            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute inset-0 bg-black/45"></div>
           )}
-          
-          <div className="absolute top-4 left-4 right-4 z-10">
-            <div className="flex items-center justify-end text-xs">
-              
-              <div className="flex space-x-1">
-                <div className={`w-4 h-2 rounded-sm ${project.detail.images && project.detail.images[0] ? 'bg-white' : 'bg-black'}`}></div>
-                <div className={`w-1 h-2 rounded-sm ${project.detail.images && project.detail.images[0] ? 'bg-white' : 'bg-black'}`}></div>
-                <div className={`w-4 h-2 rounded-sm ${project.detail.images && project.detail.images[0] ? 'bg-white' : 'bg-black'}`}></div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="absolute top-16 left-4 right-4 z-10">
+
+          <div className="absolute top-[10rem] left-4 right-4 z-10">
             <div className={`text-sm font-bold mb-2 ${project.detail.images && project.detail.images[0] ? 'text-white' : 'text-black'}`}>
               {project.title.toLowerCase()}
             </div>

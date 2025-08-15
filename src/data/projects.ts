@@ -2,14 +2,14 @@ export const projects = [
   {
     slug: 'jiography',
     title: 'Jiography',
-    liveLink:'https://brownandco.ca/',
+    liveLink:'https://jiography.ca/',
     description: 'Custom WordPress Theme Development',
     year: 2025,
     industry: 'Professional Services',
     client: 'Jio Lee',
     imageUrl: '/images/projects/jiography/jiography-main.jpg',
     detail: {
-      experience: "Jio is a Professional Photographer..",
+      experience: "Jiography’s custom WordPress website was designed to showcase the artistry and precision of professional photography. Built with a fully tailored portfolio system, the site allows Jiography to present work in a visually stunning, immersive format.",
       challenge: "The primary challenge in this project was to visualize complex energy data in an intuitive and beautiful way.",
       results: "The finished website provided a powerful tool for stakeholders, highlighting the unique value proposition of atabc's technology.",
       testimonial: {
@@ -52,7 +52,7 @@ export const projects = [
   {
     slug: 'ceda-rim',
     title: 'Cedar Rim Nursery',
-    liveLink:'https://brownandco.ca/',
+    liveLink:'https://cedarrim.com',
     description: 'Woocommerce Company',
     year: 2021,
     industry: 'Cedar Rim online store',
@@ -102,7 +102,7 @@ export const projects = [
   {
     slug: 'atabc',
     title: 'ATABC',
-    liveLink:'https://brownandco.ca/',
+    liveLink:'https://athletictherapybc.ca/',
     description: 'Athletic Therapist Association in BC',
     year: 2024,
     industry: 'Health Care and Social Assistance',
@@ -127,7 +127,7 @@ export const projects = [
   {
     slug: 'ad-lucem',
     title: 'Ad Lucem',
-    liveLink:'https://brownandco.ca/',
+    liveLink:'https://www.adlucemlaw.com/',
     description: 'My work in the legal services sector',
     year: 2021,
     industry: 'Legal Services',
@@ -152,7 +152,7 @@ export const projects = [
   {
     slug: 'the-creative',
     title: 'The Creative',
-    liveLink:'https://brownandco.ca/',
+    liveLink:'https://creative-canvas.websitepro.hosting/',
     description: 'Custom WordPress Theme Development',
     year: 2023,
     industry: 'Professional Services',
@@ -177,7 +177,7 @@ export const projects = [
   {
     slug: 'the-growth',
     title: 'The Growth',
-    liveLink:'https://brownandco.ca/',
+    liveLink:'https://wcd-theme-library.websitepro.hosting/',
     description: 'Custom WordPress Theme Development',
     year: 2022,
     industry: 'Professional Services',

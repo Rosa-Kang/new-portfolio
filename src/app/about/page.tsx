@@ -119,25 +119,17 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'ILLUSTRATION',
-                description: 'Custom illustrations and graphic design work'
+                title: 'WordPress Website Creation',
+                description: 'Custom wordpress website development'
               },
               {
-                title: 'BRAND ART',
-                description: 'Brand identity and visual art direction'
-              },
-              {
-                title: 'PHOTO',
-                description: 'Professional photography and image editing'
+                title: 'Shopify Website',
+                description: 'Shopify Website Custom Development'
               },
               {
                 title: 'UI&UX DESIGN',
                 description: 'User interface and experience design'
               },
-              {
-                title: 'VIDEO EDIT',
-                description: 'Video editing and motion graphics'
-              }
             ].map((service, index) => (
               <motion.div
                 key={service.title}

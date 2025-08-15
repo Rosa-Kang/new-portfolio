@@ -144,7 +144,7 @@ export function GalleryImage({
         <motion.div
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
-          className="absolute inset-0 bg-black/20 flex items-center justify-center"
+          className="absolute inset-0 bg-black/45 flex items-center justify-center"
         >
           <motion.div
             initial={{ scale: 0 }}
